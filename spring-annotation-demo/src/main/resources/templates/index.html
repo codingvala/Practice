@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+        <meta charset="UTF-8" />
+        <title>Spring Annotation Demo</title>
+        <link rel="stylesheet" href="/css/styles.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+    <div class="card">
+        <h1 th:text="${greeting}">Greeting</h1>
+
+        <section>
+            <h2>Users</h2>
+            <ul>
+                <li th:each="u : ${users}" th:text="${u.name}">User</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Add user</h3>
+            <form th:action="@{/users}" th:object="${userForm}" method="post">
+                <input type="text" th:field="*{name}" placeholder="Name" />
+                <button type="submit">Add</button>
+            </form>
+        </section>
+
+        <small style="display:block;margin-top:12px;color:#66788a">Tip: Use the form above to add a user.</small>
+    </div>
+</body>
+</html>

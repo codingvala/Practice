@@ -1,0 +1,7 @@
+com/example/springannotationdemo/repository/UserRepository.class
+com/example/springannotationdemo/web/DemoController.class
+com/example/springannotationdemo/service/UserService.class
+com/example/springannotationdemo/config/AppConfig.class
+com/example/springannotationdemo/SpringAnnotationDemoApplication.class
+com/example/springannotationdemo/component/GreetingComponent.class
+com/example/springannotationdemo/model/User.class
