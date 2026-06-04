@@ -15,23 +15,23 @@ Open http://localhost:8080 to view the demo. H2 Console: http://localhost:8080/h
 
 ```mermaid
 flowchart TD
-    UI["Browser: index.html"]
-    Controller["@Controller<br/>DemoController"]
-    Service["@Service<br/>UserService"]
-    Repository["@Repository<br/>UserRepository"]
+    UI["Browser<br/>index.html"]
+    Controller["Controller<br/>DemoController"]
+    Service["Service<br/>UserService"]
+    Repository["Repository<br/>UserRepository"]
     DB["H2 Database"]
-    Component["@Component<br/>GreetingComponent"]
-    Config["@Configuration<br/>AppConfig"]
+    Component["Component<br/>GreetingComponent"]
+    Config["Configuration<br/>AppConfig"]
     
     UI -->|GET /| Controller
-    Controller -->|@Autowired| Component
-    Component -->|@Value| Controller
-    Controller -->|@Autowired| Service
-    Service -->|@Autowired| Repository
-    Repository -->|JPA| DB
-    Service -->|@Transactional| DB
-    Config -->|@Bean| Service
-    Controller -->|Model| UI
+    Controller -->|inject| Component
+    Component -->|greeting| Controller
+    Controller -->|inject| Service
+    Service -->|inject| Repository
+    Repository -->|query| DB
+    Service -->|persist| DB
+    Config -->|init| Service
+    Controller -->|render| UI
 ```
 
 ## Files of interest:
